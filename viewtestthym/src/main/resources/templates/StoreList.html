@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>Test View</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<form action="#" th:action="@{/storeList/}" th:object="${medL}"
+		method="get">
+
+		<fieldset>
+			<label>Shop Name:</label> <input type="text"
+				th:field="${medL.shopName}" /> <b> Medicine:</b><br>
+			<table>
+			<thead>
+				<tr>
+				<th>Name</th>
+				<th>Manufactured By</th>
+				<th>Marketed By</th>
+				<th>Chemical Composition</th>
+				<th>Any Other Note</th>
+				
+				</tr>
+			</thead>
+				<tbody>
+					<tr th:each="med, itemStat : ${medL.medicList}">
+						<td><span th:text="${itemStat.count}"></span><input type="text" th:value="${med.name}"
+							th:field="*{medicList[__${itemStat.index}__].name}"></td>
+
+						<td><input type="text" th:value="${med.mfg_By}"
+							th:field="*{medicList[__${itemStat.index}__].mfg_By}"></td>
+
+						<td><input type="text" th:value="${med.mktd_By}"
+							th:field="*{medicList[__${itemStat.index}__].mktd_By}"></td>
+
+						<td><input type="text" th:value="${med.chemicals}"
+							th:field="*{medicList[__${itemStat.index}__].chemicals}">
+						</td>
+
+						<td><input type="text" th:value="${med.any_other_note}"
+							th:field="*{medicList[__${itemStat.index}__].any_other_note}">
+						</td>
+						
+					</tr>
+				</tbody>
+			</table>
+			<p>
+				<input type="submit" th:value="Add_Another_Medicine" th:formaction= "@{/addMedicineDataRow}" >
+				<input type="submit" th:value="SUBMIT">
+			</p>
+		</fieldset>
+
+	</form>
+</body>
+</html>

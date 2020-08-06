@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+  <head>
+    <title>Test View</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  </head>
+
+  <body>
+  
+  <form action="#" th:action="@{/store/}" th:object="${medic}"	method="get">
+  
+  <b> Medicine 1:</b><br> 
+  <table>
+  <tbody>
+  <tr>
+  	<td>
+  	<label>Name of Medicine</label>	
+  	<input type="text" th:field="*{name}" >
+  	</td>
+  	
+  	<td>
+  	<label>Manufactured By:</label>	
+  	<input type="text" th:field="*{mfg_By}">
+    </td>
+  
+    <td>
+   	<label>Marketed By:</label> 
+   	<input type="text" th:field="*{mktd_By}">
+  	</td>
+  
+  	<td>
+  	<label>Chemical Compositions:</label>
+  	<input type="text" th:field="*{chemicals}">
+  	</td>
+  
+  	<td>
+   	<label>Any Other Note:</label>
+   	<input type="text" th:field="*{any_other_note}">
+    </td>
+  
+  </tbody>
+  </table>
+  <p><input type="submit" value="SUBMIT" ></p>
+  
+  </form>
+
+
+  
+  
+  </body>
+
+</html>

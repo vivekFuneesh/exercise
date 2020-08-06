@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+  <head>
+    <title>Test View</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  </head>
+
+  <body>
+  
+  
+  <form action="/add/" 	method="get">
+  
+  <p>Name:<input type="text" name="name"> 
+  Phone:<input type="text" name="phone"></p>
+ <br>
+  <p><b> Medicine 1:</b><br> 
+  		dose<input type="number" name="prescribed_medicines[0].dosage_amount" value="-1">
+  		timings<input type="text" name="prescribed_medicines[0].timings">
+  </p>
+  <p> name<input type="text" name="prescribed_medicines[0].md.name">
+  	  mfg_by<input type="text" name="prescribed_medicines[0].md.mfg_By">
+   </p>
+   <p>
+   	  mktd_by<input type="text" name="prescribed_medicines[0].md.mktd_By">
+  	  chemicals<input type="text" name="prescribed_medicines[0].md.chemicals">
+   </p>
+   	  NOTE<input type="text" name="prescribed_medicines[0].md.any_other_note">
+  
+  
+   <br>
+  <p><b> Medicine 2:</b><br> 
+  		dose<input type="number" name="prescribed_medicines[1].dosage_amount" value="-1">
+  		timings<input type="text" name="prescribed_medicines[1].timings">
+  </p>
+  <p> name<input type="text" name="prescribed_medicines[1].md.name">
+  	  mfg_by<input type="text" name="prescribed_medicines[1].md.mfg_By">
+   </p>
+   <p>
+   	  mktd_by<input type="text" name="prescribed_medicines[1].md.mktd_By">
+  	  chemicals<input type="text" name="prescribed_medicines[1].md.chemicals">
+   </p>
+   	  NOTE<input type="text" name="prescribed_medicines[1].md.any_other_note">
+  
+  
+   <br>
+  <p><b> Medicine 3:</b><br> 
+  		dose<input type="number" name="prescribed_medicines[2].dosage_amount" value="-1">
+  		timings<input type="text" name="prescribed_medicines[2].timings">
+  </p>
+  <p> name<input type="text" name="prescribed_medicines[2].md.name">
+  	  mfg_by<input type="text" name="prescribed_medicines[2].md.mfg_By">
+   </p>
+   <p>
+   	  mktd_by<input type="text" name="prescribed_medicines[2].md.mktd_By">
+  	  chemicals<input type="text" name="prescribed_medicines[2].md.chemicals">
+   </p>
+   	  NOTE<input type="text" name="prescribed_medicines[2].md.any_other_note">
+  
+  
+   <br>
+  <p><b> Medicine 4:</b><br> 
+  		dose<input type="number" name="prescribed_medicines[3].dosage_amount" value="-1">
+  		timings<input type="text" name="prescribed_medicines[3].timings">
+  </p>
+  <p> name<input type="text" name="prescribed_medicines[3].md.name">
+  	  mfg_by<input type="text" name="prescribed_medicines[3].md.mfg_By">
+   </p>
+   <p>
+   	  mktd_by<input type="text" name="prescribed_medicines[3].md.mktd_By">
+  	  chemicals<input type="text" name="prescribed_medicines[3].md.chemicals">
+   </p>
+   	  NOTE<input type="text" name="prescribed_medicines[3].md.any_other_note">
+  
+  
+  
+  
+  <p><input type="submit" value="SUBMIT" ></p>
+  
+  </form>
+  
+  
+  
+  </body>
+
+</html>
