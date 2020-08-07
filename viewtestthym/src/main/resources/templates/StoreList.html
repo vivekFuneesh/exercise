@@ -41,7 +41,12 @@
 						<td><input type="text" th:value="${med.any_other_note}"
 							th:field="*{medicList[__${itemStat.index}__].any_other_note}">
 						</td>
-						
+						<td>
+						<form>
+						<input type="hidden" th:name="delete" th:value="${itemStat.index}"  >
+						<input type="submit" th:formaction="@{/deleteMedicineDataRow}" th:value="remove" >
+						</form>
+						</td>
 					</tr>
 				</tbody>
 			</table>

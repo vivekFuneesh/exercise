@@ -37,6 +37,9 @@ public class Incoming1 {
 	
 	
 	
+	
+	
+	
 	@GetMapping("/add/")
 	public void getData(PersonDto pdto) {
 		System.out.println("Person Object "+pdto+"\n");
