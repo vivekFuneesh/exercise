@@ -3,10 +3,12 @@ package com.vivek.viewtestthym.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.Errors;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -16,7 +18,7 @@ import com.vivek.viewtestthym.dto.MedicineDataDto;
 import com.vivek.viewtestthym.dto.MedicineDataListDto;
 
 @Controller
-@SessionAttributes("medL")
+//@SessionAttributes("medL")
 public class View1 {
 
 	
@@ -66,16 +68,17 @@ public class View1 {
 	
 	
 	@GetMapping("/deleteMedicineDataRow")
-	public String deleteMedicineDataRow(Model model, @RequestParam("delete") int deleteIndex) {
-		System.out.println("Inside DELETE row");
-		MedicineDataListDto medListDto=((MedicineDataListDto)model.getAttribute("medL"));
+	public String deleteMedicineDataRow(@ModelAttribute("medL") MedicineDataListDto medListDto, @RequestParam("delete") Integer deleteIndex, BindingResult br) {
+	
+		System.out.println("Inside DELETE row"+" "+ br.hasErrors());
+	//	MedicineDataListDto medListDto=((MedicineDataListDto)model.getAttribute("medL"));
 		List<MedicineDataDto> medList=medListDto.getMedicList();
 		System.out.println((medList!=null?medList.size():0)+" "+medListDto.getShopName());
 		//System.out.println(med.getName() +" "+ med.getMktd_By() +" "+ med.getMfg_By()+" "+ med.getChemicals() +" "+med.getAny_other_note());		
 		if(medList!=null)
 		medList.forEach(md -> System.out.println(md.getName() +" "+ md.getMktd_By() +" "+ md.getMfg_By()+" "+ md.getChemicals() +" "+md.getAny_other_note()));
 		
-		medList.remove(deleteIndex);
+		medList.remove(deleteIndex.intValue());
 		return "StoreList";
 	}
 	
